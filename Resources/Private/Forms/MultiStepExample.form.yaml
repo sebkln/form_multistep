@@ -1,0 +1,284 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: MultiStepExample
+prototypeName: multiStepForm
+label: 'Example - Multi-step navigation and custom summary page'
+finishers:
+  -
+    options:
+      subject: 'Form example: Multi-step navigation'
+      senderAddress: '{email}'
+      senderName: '{firstName--billing} {lastName--billing}'
+      attachUploads: true
+      recipients:
+        your.company@example.com: 'Your Company name'
+      addHtmlPart: true
+      useFluidEmail: true
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: pageProducts
+    label: Products
+    renderables:
+      -
+        type: Fieldset
+        identifier: fieldsetProducts
+        label: Products
+        renderables:
+          -
+            defaultValue: '1'
+            properties:
+              fluidAdditionalAttributes:
+                step: 1
+              elementDescription: 'Better get two!'
+            type: Number
+            identifier: productGamingConsole
+            label: 'Awesome gaming console™'
+            validators:
+              -
+                identifier: Number
+          -
+            properties:
+              options:
+                Blue: Blue
+                Red: Red
+                Transparent: Transparent
+                'Glow in the dark': 'Glow in the dark'
+              prependOptionLabel: 'Select version …'
+            type: SingleSelect
+            identifier: productTravelCase
+            label: 'Travel case'
+            defaultValue: Blue
+          -
+            properties:
+              options:
+                Batteries: Batteries
+                'Memory card': 'Memory card'
+                Controller: Controller
+                'Second controller': 'Second controller'
+                'Retro controller': 'Retro controller'
+              elementDescription: 'Sold separately.'
+            type: MultiCheckbox
+            identifier: productAccessories
+            label: Accessories
+            defaultValue:
+              - Batteries
+              - Controller
+              - 'Second controller'
+          -
+            type: Checkbox
+            identifier: productThatOneThing
+            label: "That one thing you almost didn't put in the shopping cart but later turns out to be super practical."
+          -
+            properties:
+              options:
+                'Wrap as gift': 'Wrap as gift'
+                'Insured shipping': 'Insured shipping'
+            type: MultiCheckbox
+            identifier: productServices
+            label: Services
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: pageBilling
+    label: Billing
+    renderables:
+      -
+        type: Fieldset
+        identifier: fieldsetBillingAddress
+        label: 'Billing address'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: firstName--billing
+            label: 'First name'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: lastName--billing
+            label: 'Last name'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: address--billing
+            label: Address
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: postalCode--billing
+            label: 'Postal code'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: city--billing
+            label: City
+            properties:
+              elementDescription: ''
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: country--billing
+            label: Country
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            type: Checkbox
+            identifier: address-is-identical
+            label: 'Use billing address as shipping address.'
+      -
+        type: Fieldset
+        identifier: fieldsetContactData
+        label: 'Contact data'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: email
+            label: 'E-mail address'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: EmailAddress
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Telephone
+            identifier: phone
+            label: 'Phone number'
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: pageShipping
+    label: Shipping
+    variants:
+      -
+        identifier: skip-shipping
+        condition: 'traverse(formValues, "address-is-identical") == 1'
+        renderingOptions:
+          enabled: false
+    renderables:
+      -
+        type: Fieldset
+        identifier: fieldsetShippingAddress
+        label: 'Shipping address'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: firstName--shipping
+            label: 'First name'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: lastName--shipping
+            label: 'Last name'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: address--shipping
+            label: Address
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: postalCode--shipping
+            label: 'Postal code'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: city--shipping
+            label: City
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: country--shipping
+            label: Country
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: SummaryPage
+    identifier: pageSummary
+    label: Summary

@@ -1,0 +1,14 @@
+// Minimal page configuration, just enough to style the form.
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:form/Configuration/TypoScript/setup.typoscript'
+
+page = PAGE
+page {
+    bodyTagAdd = class="bg-primary-subtle"
+    meta.viewport = width=device-width, initial-scale=1.0
+    includeCSSLibs.bootstrap = EXT:form_multistep/Resources/Public/Css/bootstrap.min.css
+    includeCSS.stepper = EXT:form_multistep/Resources/Public/Css/stepper.css
+
+    10 < styles.content.get
+    10.wrap = <div class="py-5"><div class="container bg-white p-4">|</div</div
+}

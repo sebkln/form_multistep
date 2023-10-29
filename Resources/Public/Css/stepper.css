@@ -1,0 +1,130 @@
+/**
+ * Button-reset utility class
+ * Removes all default browser styles for a button.
+ * Is used for the form buttons in the stepper component.
+ */
+.u-button-reset {
+    all: unset;
+}
+
+
+/**
+ * Stepper component
+ * Loosely based on: https://ishadeed.com/article/stepper-component-html-css/
+ */
+.c-stepper {
+    --blue: var(--bs-primary);
+    --green: #00924e;
+    --grey: #333;
+    --grey-light: #ddd;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+/* List item */
+.c-stepper__item {
+    --item-state-color: var(--green);
+    --circle-size: 20px;
+    --circle-font-size: 12px;
+    --circle-font-weight: 700;
+    --circle-bg: var(--green);
+    --circle-color: #fff;
+    --circle-outline: 2px;
+    --circle-outline-offset: 2px;
+
+    color: var(--item-state-color);
+    counter-increment: step-counter;
+    display: flex;
+    flex: 1;
+    text-align: center;
+    flex-direction: column;
+}
+
+.c-stepper__item--current {
+    --item-state-color: var(--blue);
+    --circle-bg: var(--blue);
+    --circle-color: #fff;
+}
+
+.c-stepper__item--next {
+    --item-state-color: var(--grey);
+    --circle-bg: var(--grey-light);
+    --circle-color: currentColor;
+}
+
+
+/* Progress bar */
+.c-stepper__item:not(:first-child)::before {
+    --progress-color: var(--green);
+    --progress-gap: 6px;
+    --progress-outline: 0px;
+
+    content: "";
+    position: relative;
+    bottom: calc(var(--circle-size) / 2);
+    right: calc(50% - calc(var(--circle-size) / 2 + var(--progress-gap)));
+    height: 2px;
+    background-color: var(--progress-color);
+    order: 1;
+    width: calc(100% - var(--circle-size) - var(--progress-outline) - calc(var(--progress-gap) * 2));
+}
+
+.c-stepper__item.c-stepper__item--current::before {
+    --progress-outline: calc(var(--circle-outline) + var(--circle-outline-offset));
+}
+
+.c-stepper__item--current + .c-stepper__item::before {
+    --progress-outline: calc(var(--circle-outline) + var(--circle-outline-offset));
+
+    right: calc(50% - calc(var(--circle-size) / 2 + var(--progress-gap) + var(--progress-outline)));
+}
+
+.c-stepper__item.c-stepper__item--next::before {
+    --progress-color: var(--grey-light);
+}
+
+
+/* Numbered circle */
+.c-stepper__circle {
+    align-self: center;
+}
+
+.c-stepper__circle::after {
+    background: var(--circle-bg);
+    border-radius: 50%;
+    color: var(--circle-color);
+    content: counter(step-counter);
+    display: block;
+    font-size: var(--circle-font-size);
+    font-weight: var(--circle-font-weight);
+    height: var(--circle-size);
+    line-height: var(--circle-size);
+    margin: 0 auto;
+    position: relative;
+    width: var(--circle-size);
+    z-index: 1;
+}
+
+.c-stepper__item--current .c-stepper__circle::after {
+    outline: var(--circle-outline) solid var(--circle-bg);
+    outline-offset: var(--circle-outline-offset);
+}
+
+
+/* Label */
+.c-stepper__label {
+    color: currentColor;
+    display: block;
+    font-size: 12px;
+    padding-bottom: 0.25em;
+}
+
+@media (min-width: 768px) {
+    .c-stepper__label {
+        font-size: 16px;
+    }
+}

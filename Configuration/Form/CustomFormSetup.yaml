@@ -1,0 +1,32 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          960: EXT:form_multistep/Resources/Private/Forms/
+
+      prototypes:
+        ### PROTOTYPE: MULTI-STEP FORM
+        ### By using this custom prototype for the provided example form,
+        ### the "form_multistep" extension prevents the following configuration
+        ### from affecting other forms in your TYPO3 installation.
+        ###
+        ### This does NOT necessarily mean that you MUST use custom prototypes in your TYPO3 project!
+        multiStepForm:
+          __inheritances:
+            10: 'TYPO3.CMS.Form.prototypes.standard'
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                # Use Fluid templates compatible with Bootstrap 5.x
+                templateVariant: version2
+                translation:
+                  translationFiles:
+                    # index "10" is reserved for the default translation file.
+                    20: 'EXT:form_multistep/Resources/Private/Language/form.xlf'
+                templateRootPaths:
+                  100: 'EXT:form_multistep/Resources/Private/Frontend/Templates/'
+                partialRootPaths:
+                  100: 'EXT:form_multistep/Resources/Private/Frontend/Partials/'
+                layoutRootPaths:
+                  100: 'EXT:form_multistep/Resources/Private/Frontend/Layouts/'

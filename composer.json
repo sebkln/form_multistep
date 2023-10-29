@@ -1,0 +1,29 @@
+{
+	"name": "sebkln/form-multistep",
+	"type": "typo3-cms-extension",
+	"description": "Demonstrates how to integrate a stepper navigation in multi-step forms, as well as a customized summary page with edit buttons.",
+	"license": [
+		"GPL-2.0-or-later"
+	],
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"forms"
+	],
+	"homepage": "https://www.sebkln.de",
+	"authors": [
+		{
+			"name": "Sebastian Klein",
+			"email": "sebastian@sebkln.de",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"typo3/cms-core": ">=11.5.0 <12.4.99"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "form_multistep"
+		}
+	}
+}

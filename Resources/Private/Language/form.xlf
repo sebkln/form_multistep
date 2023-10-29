@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext"
+		  original="EXT:form_multistep/Resources/Private/Language/form.xlf" product-name="form_multistep">
+		<header/>
+		<body>
+			<!-- Pages -->
+			<trans-unit id="element.pageProducts.properties.label" resname="element.pageProducts.properties.label">
+				<source>Products</source>
+			</trans-unit>
+			<trans-unit id="element.pageBilling.properties.label" resname="element.pageBilling.properties.label">
+				<source>Billing</source>
+			</trans-unit>
+			<trans-unit id="element.pageShipping.properties.label" resname="element.pageShipping.properties.label">
+				<source>Shipping</source>
+			</trans-unit>
+			<trans-unit id="element.pageSummary.properties.label" resname="element.pageSummary.properties.label">
+				<source>Summary</source>
+			</trans-unit>
+
+			<!-- Fields & Fieldsets -->
+			<trans-unit id="element.fieldsetProducts.properties.label" resname="element.fieldsetProducts.properties.label">
+				<source>Products</source>
+			</trans-unit>
+			<trans-unit id="element.productGamingConsole.properties.label" resname="element.productGamingConsole.properties.label">
+				<source>Awesome gaming console™</source>
+			</trans-unit>
+			<trans-unit id="element.productGamingConsole.properties.elementDescription" resname="element.productGamingConsole.properties.elementDescription">
+				<source>Better get two!</source>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.label" resname="element.productTravelCase.properties.label">
+				<source>Travel case</source>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.options.Blue" resname="element.productTravelCase.properties.options.Blue">
+				<source>Blue</source>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.prependOptionLabel" resname="element.productTravelCase.properties.prependOptionLabel">
+				<source>Select version …</source>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.options.Red" resname="element.productTravelCase.properties.options.Red">
+				<source>Red</source>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.options.Transparent" resname="element.productTravelCase.properties.options.Transparent">
+				<source>Transparent</source>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.options.Glow in the dark" resname="element.productTravelCase.properties.options.Glow in the dark">
+				<source>Glow in the dark</source>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.label" resname="element.productAccessories.properties.label">
+				<source>Accessories</source>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.elementDescription" resname="element.productAccessories.properties.elementDescription">
+				<source>Sold separately.</source>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.options.Batteries" resname="element.productAccessories.properties.options.Batteries">
+				<source>Batteries</source>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.options.Memory card" resname="element.productAccessories.properties.options.Memory card">
+				<source>Memory card</source>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.options.Second controller" resname="element.productAccessories.properties.options.Second controller">
+				<source>Second controller</source>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.options.Retro controller" resname="element.productAccessories.properties.options.Retro controller">
+				<source>Retro controller</source>
+			</trans-unit>
+			<trans-unit id="element.productThatOneThing.properties.label" resname="element.productThatOneThing.properties.label">
+				<source>That one thing you almost didn't put in the shopping cart but later turns out to be super practical.</source>
+			</trans-unit>
+			<trans-unit id="element.productServices.properties.label" resname="element.productServices.properties.label">
+				<source>Services</source>
+			</trans-unit>
+			<trans-unit id="element.productServices.properties.options.Wrap as gift" resname="element.productServices.properties.options.Wrap as gift">
+				<source>Wrap as gift</source>
+			</trans-unit>
+			<trans-unit id="element.productServices.properties.options.Insured shipping" resname="element.productServices.properties.options.Insured shipping">
+				<source>Insured shipping</source>
+			</trans-unit>
+			<trans-unit id="element.fieldsetBillingAddress.properties.label" resname="element.fieldsetBillingAddress.properties.label">
+				<source>Billing address</source>
+			</trans-unit>
+			<trans-unit id="element.firstName--billing.properties.label" resname="element.firstName--billing.properties.label">
+				<source>First name</source>
+			</trans-unit>
+			<trans-unit id="element.lastName--billing.properties.label" resname="element.lastName--billing.properties.label">
+				<source>Last name</source>
+			</trans-unit>
+			<trans-unit id="element.address--billing.properties.label" resname="element.address--billing.properties.label">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="element.postalCode--billing.properties.label" resname="element.postalCode--billing.properties.label">
+				<source>Postal code</source>
+			</trans-unit>
+			<trans-unit id="element.city--billing.properties.label" resname="element.city--billing.properties.label">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="element.country--billing.properties.label" resname="element.country--billing.properties.label">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="element.address-is-identical.properties.label" resname="element.address-is-identical.properties.label">
+				<source>Use billing address as shipping address.</source>
+			</trans-unit>
+			<trans-unit id="element.fieldsetContactData.properties.label" resname="element.fieldsetContactData.properties.label">
+				<source>Contact data</source>
+			</trans-unit>
+			<trans-unit id="element.email.properties.label" resname="element.email.properties.label">
+				<source>Email address</source>
+			</trans-unit>
+			<trans-unit id="element.phone.properties.label" resname="element.phone.properties.label">
+				<source>Phone number</source>
+			</trans-unit>
+			<trans-unit id="element.fieldsetShippingAddress.properties.label" resname="element.fieldsetShippingAddress.properties.label">
+				<source>Shipping address</source>
+			</trans-unit>
+			<trans-unit id="element.firstName--shipping.properties.label" resname="element.firstName--shipping.properties.label">
+				<source>First name</source>
+			</trans-unit>
+			<trans-unit id="element.lastName--shipping.properties.label" resname="element.lastName--shipping.properties.label">
+				<source>Last name</source>
+			</trans-unit>
+			<trans-unit id="element.address--shipping.properties.label" resname="element.address--shipping.properties.label">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="element.postalCode--shipping.properties.label" resname="element.postalCode--shipping.properties.label">
+				<source>Postal code</source>
+			</trans-unit>
+			<trans-unit id="element.city--shipping.properties.label" resname="element.city--shipping.properties.label">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="element.country--shipping.properties.label" resname="element.country--shipping.properties.label">
+				<source>Country</source>
+			</trans-unit>
+
+			<!-- Buttons -->
+			<trans-unit id="element.Form.renderingOptions.submitButtonLabel" resname="element.Form.renderingOptions.submitButtonLabel">
+				<source>Order now</source>
+			</trans-unit>
+			<trans-unit id="element.Page.renderingOptions.previousButtonLabel" resname="element.Page.renderingOptions.previousButtonLabel">
+				<source>back</source>
+			</trans-unit>
+			<trans-unit id="element.Page.renderingOptions.nextButtonLabel" resname="element.Page.renderingOptions.nextButtonLabel">
+				<source>continue</source>
+			</trans-unit>
+			<trans-unit id="element.SummaryPage.renderingOptions.previousButtonLabel" resname="element.SummaryPage.renderingOptions.previousButtonLabel">
+				<source>back</source>
+			</trans-unit>
+			<trans-unit id="element.SummaryPage.renderingOptions.nextButtonLabel" resname="element.SummaryPage.renderingOptions.nextButtonLabel">
+				<source>continue</source>
+			</trans-unit>
+
+			<!-- Custom -->
+			<trans-unit id="btn.edit.label" resname="btn.edit.label">
+				<source>edit</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

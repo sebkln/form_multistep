@@ -1,0 +1,214 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment><!--
+------------------------------------------
+## Adjustments:
+- Render certain form values individually
+- Iterate through a selected subgroup of form fields and values
+- New edit buttons that will open the associated form step/page
+- Custom markup and styling
+
+## Comments:
+- The focus of this example was on comprehensibility, not the best possible usability or styling.
+- Please note that the "renderAllFormValues" ViewHelper iterates through all given fields inside
+  the fieldset with identifier "fieldsetProducts". All other form elements are rendered explicitly!
+  It would allow to use this demo summary page for multiple order forms where only the products may vary.
+- For the sake of simplicity, all "renderFormValue" ViewHelpers use the same variable name "formValue".
+  You could also set individual variable names and nest the "renderFormValue" ViewHelpers, if needed.
+------------------------------------------
+--></f:comment>
+<formvh:renderRenderable renderable="{page}">
+    <f:if condition="{page.label}">
+        <h1 class="text-center">{formvh:translateElementProperty(element: page, property: 'label')}</h1>
+    </f:if>
+
+
+    <f:comment><!--
+    ------------------------------------------
+    Page 1: Products
+    ------------------------------------------
+    --></f:comment>
+    <h2 class="mt-4 mb-3">{formvh:translateElementProperty(element: page.rootForm.pages.0, property: 'label')}</h2>
+    <div class="bg-body-secondary p-3 mb-4">
+        <f:comment><!-- While the default SummaryPage template iterates through the complete form, we limit it to the fields inside a certain fieldset. --></f:comment>
+        <formvh:renderAllFormValues renderable="{page.rootForm.elements.fieldsetProducts}" as="formValue">
+            <f:if condition="{formValue.isSection}">
+                <f:then>
+                    <p><b>{formvh:translateElementProperty(element: formValue.element, property: 'label')}</b></p>
+                </f:then>
+                <f:else>
+                    <f:if condition="{formValue.value}">
+                        <f:then>
+                            <f:if condition="{0: formValue.element.type} == {0: 'Checkbox'}">
+                                <f:then>
+                                    <div class="d-flex my-3">
+                                        <div class="flex-shrink-0 lh-sm">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                                                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-grow-1 ms-2">
+                                            {formvh:translateElementProperty(element: formValue.element, property: 'label')}
+                                        </div>
+                                    </div>
+                                </f:then>
+                                <f:else>
+                                    <dl class="row my-3">
+                                        <dt class="col-sm-4 col-md-3">{formvh:translateElementProperty(element: formValue.element, property: 'label')}</dt>
+                                        <dd class="col-sm-8 col-md-9 mb-0">
+                                            <f:if condition="{formValue.isMultiValue}">
+                                                <f:then>
+                                                    <ul class="list-group">
+                                                        <f:for each="{formValue.processedValue}" as="value">
+                                                            <li class="list-group-item">{value}</li>
+                                                        </f:for>
+                                                    </ul>
+                                                </f:then>
+                                                <f:else>
+                                                    <f:format.nl2br>{formValue.processedValue}</f:format.nl2br>
+                                                </f:else>
+                                            </f:if>
+                                        </dd>
+                                    </dl>
+                                </f:else>
+                            </f:if>
+                        </f:then>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </formvh:renderAllFormValues>
+
+        <f:form.button property="__currentPage" value="0"
+                       class="btn btn-primary btn-sm"
+                       additionalAttributes="{respectSubmittedDataValue: false}"
+                       formnovalidate="formnovalidate">
+            {f:translate(key: 'LLL:EXT:form_multistep/Resources/Private/Language/form.xlf:btn.edit.label')}
+        </f:form.button>
+    </div>
+
+
+    <f:comment><!--
+    ------------------------------------------
+    Page 2: Billing
+    ------------------------------------------
+    --></f:comment>
+    <h2 class="mt-4 mb-3">{formvh:translateElementProperty(element: page.rootForm.pages.1, property: 'label')}</h2>
+    <div class="row row-gap-5 mb-4">
+        <div class="col-12 col-md-6 d-flex">
+            <div class="bg-body-secondary d-flex flex-column flex-grow-1 p-3">
+                <h3>{formvh:translateElementProperty(element: page.rootForm.elements.fieldsetBillingAddress, property: 'label')}</h3>
+
+                <div class="flex-grow-1">
+                    <p>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.firstName--billing}" as="formValue">
+                            {formValue.processedValue}
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.lastName--billing}" as="formValue">
+                            {formValue.processedValue}<br>
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.address--billing}" as="formValue">
+                            {formValue.processedValue}<br>
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.postalCode--billing}" as="formValue">
+                            {formValue.processedValue}
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.city--billing}" as="formValue">
+                            {formValue.processedValue}<br>
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.country--billing}" as="formValue">
+                            {formValue.processedValue}
+                        </formvh:renderFormValue>
+                    </p>
+                </div>
+                <div>
+                    <f:form.button property="__currentPage" value="1"
+                                   class="btn btn-primary btn-sm"
+                                   additionalAttributes="{respectSubmittedDataValue: false}"
+                                   formnovalidate="formnovalidate">
+                        {f:translate(key: 'LLL:EXT:form_multistep/Resources/Private/Language/form.xlf:btn.edit.label')}
+                    </f:form.button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex">
+            <div class="bg-body-secondary d-flex flex-column flex-grow-1 p-3">
+                <h3>{formvh:translateElementProperty(element: page.rootForm.elements.fieldsetContactData, property: 'label')}</h3>
+
+                <div class="flex-grow-1">
+                    <p>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.email}" as="formValue">
+                            {formvh:translateElementProperty(element: formValue.element, property: 'label')}:
+                            {formValue.processedValue}
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.phone}" as="formValue">
+                            <f:if condition="{formValue.value}">
+                                <br>
+                                {formvh:translateElementProperty(element: formValue.element, property: 'label')}:
+                                {formValue.processedValue}
+                            </f:if>
+                        </formvh:renderFormValue>
+                    </p>
+                </div>
+                <div>
+                    <f:form.button property="__currentPage" value="1"
+                                   class="btn btn-primary btn-sm"
+                                   additionalAttributes="{respectSubmittedDataValue: false}"
+                                   formnovalidate="formnovalidate">
+                        {f:translate(key: 'LLL:EXT:form_multistep/Resources/Private/Language/form.xlf:btn.edit.label')}
+                    </f:form.button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <f:comment><!--
+    ------------------------------------------
+    Page 3: Shipping
+    ------------------------------------------
+    --></f:comment>
+    <h2 class="mt-4 mb-3">{formvh:translateElementProperty(element: page.rootForm.pages.2, property: 'label')}</h2>
+    <div class="bg-body-secondary p-3 mb-4">
+        <h3>{formvh:translateElementProperty(element: page.rootForm.elements.fieldsetShippingAddress, property: 'label')}</h3>
+
+        <f:comment><!-- Renders the shipping address only if the checkbox "Use billing address as shipping address" wasn't checked. --></f:comment>
+        <formvh:renderFormValue renderable="{page.rootForm.elements.address-is-identical}" as="formValue">
+            <f:if condition="{formValue.value}">
+                <f:then>
+                    <p>{formvh:translateElementProperty(element: formValue.element, property: 'label')}</p>
+                </f:then>
+                <f:else>
+                    <p>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.firstName--shipping}" as="formValue">
+                            {formValue.processedValue}
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.lastName--shipping}" as="formValue">
+                            {formValue.processedValue}<br>
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.address--shipping}" as="formValue">
+                            {formValue.processedValue}<br>
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.postalCode--shipping}" as="formValue">
+                            {formValue.processedValue}
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.city--shipping}" as="formValue">
+                            {formValue.processedValue}<br>
+                        </formvh:renderFormValue>
+                        <formvh:renderFormValue renderable="{page.rootForm.elements.country--shipping}" as="formValue">
+                            {formValue.processedValue}
+                        </formvh:renderFormValue>
+                    </p>
+                </f:else>
+            </f:if>
+        </formvh:renderFormValue>
+
+        <f:comment><!-- If page 2 (shipping) is disabled, the Form Framework will automatically open the preceding page. --></f:comment>
+        <f:form.button property="__currentPage" value="2"
+                       class="btn btn-primary btn-sm"
+                       additionalAttributes="{respectSubmittedDataValue: false}"
+                       formnovalidate="formnovalidate">
+            {f:translate(key: 'LLL:EXT:form_multistep/Resources/Private/Language/form.xlf:btn.edit.label')}
+        </f:form.button>
+    </div>
+</formvh:renderRenderable>
+</html>

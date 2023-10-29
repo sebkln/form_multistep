@@ -1,0 +1,57 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment><!--
+------------------------------------------
+## Behavior:
+- Previous pages can be opened directly by the user with this navigation. The rendered button uses the index value of these pages.
+- The current page is not linked (superfluous).
+- Upcoming pages are not linked, even if the user did already fill out the complete form and then returned to a previous page.
+  The reason is that the Form Framework must always evaluate each form step.
+
+## Comments:
+- The navigation uses custom markup and styling and does not directly depend on Bootstrap
+  (see Resources/Public/Css/stepper.css).
+  Feel free to copy and adjust it to your needs!
+- The numbers in this navigation are rendered in CSS using "content: counter(step-counter)".
+  You could also render the same numbering using {step.cycle} inside the f:for loop.
+------------------------------------------
+--></f:comment>
+<nav>
+    <ol class="c-stepper">
+        <f:for each="{form.pages}" as="page" iteration="step">
+            <f:if condition="{page.index} == {form.currentPage.index}">
+                <f:then>
+                    <f:comment><!-- Current page (not linked) --></f:comment>
+                    <li class="c-stepper__item c-stepper__item--current">
+                        <div class="c-stepper__circle">
+                            <span class="c-stepper__label" aria-current="page">{formvh:translateElementProperty(element: page, property: 'label')}</span>
+                        </div>
+                    </li>
+                </f:then>
+                <f:else>
+                    <f:if condition="{page.index} < {form.currentPage.index}">
+                        <f:then>
+                            <f:comment><!-- Previous pages --></f:comment>
+                            <li class="c-stepper__item">
+                                <f:form.button property="__currentPage" value="{page.index}"
+                                               class="u-button-reset c-stepper__circle"
+                                               additionalAttributes="{respectSubmittedDataValue: false}"
+                                               formnovalidate="formnovalidate">
+                                    <span class="c-stepper__label">{formvh:translateElementProperty(element: page, property: 'label')}</span>
+                                </f:form.button>
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <f:comment><!-- Upcoming pages --></f:comment>
+                            <li class="c-stepper__item c-stepper__item--next">
+                                <div class="c-stepper__circle">
+                                    <span class="c-stepper__label">{formvh:translateElementProperty(element: page, property: 'label')}</span>
+                                </div>
+                            </li>
+                        </f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </f:for>
+    </ol>
+</nav>
+</html>

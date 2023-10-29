@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext"
+		  original="EXT:form_multistep/Resources/Private/Language/de.form.xlf" product-name="form_multistep">
+		<header/>
+		<body>
+			<!-- Pages -->
+			<trans-unit id="element.pageProducts.properties.label" resname="element.pageProducts.properties.label" approved="yes">
+				<source>Products</source>
+				<target>Produkte</target>
+			</trans-unit>
+			<trans-unit id="element.pageBilling.properties.label" resname="element.pageBilling.properties.label" approved="yes">
+				<source>Billing</source>
+				<target>Rechnung</target>
+			</trans-unit>
+			<trans-unit id="element.pageShipping.properties.label" resname="element.pageShipping.properties.label" approved="yes">
+				<source>Shipping</source>
+				<target>Versand</target>
+			</trans-unit>
+			<trans-unit id="element.pageSummary.properties.label" resname="element.pageSummary.properties.label" approved="yes">
+				<source>Summary</source>
+				<target>Übersicht</target>
+			</trans-unit>
+
+			<!-- Fields & Fieldsets -->
+			<trans-unit id="element.fieldsetProducts.properties.label" resname="element.fieldsetProducts.properties.label" approved="yes">
+				<source>Products</source>
+				<target>Produkte</target>
+			</trans-unit>
+			<trans-unit id="element.productGamingConsole.properties.label" resname="element.productGamingConsole.properties.label" approved="yes">
+				<source>Awesome gaming console™</source>
+				<target>Fantastische Spielkonsole™</target>
+			</trans-unit>
+			<trans-unit id="element.productGamingConsole.properties.elementDescription" resname="element.productGamingConsole.properties.elementDescription" approved="yes">
+				<source>Better get two!</source>
+				<target>Nimm besser zwei!</target>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.label" resname="element.productTravelCase.properties.label" approved="yes">
+				<source>Travel case</source>
+				<target>Reisetasche</target>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.options.Blue" resname="element.productTravelCase.properties.options.Blue" approved="yes">
+				<source>Blue</source>
+				<target>Blau</target>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.prependOptionLabel" resname="element.productTravelCase.properties.prependOptionLabel" approved="yes">
+				<source>Select version …</source>
+				<target>Version wählen …</target>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.options.Red" resname="element.productTravelCase.properties.options.Red" approved="yes">
+				<source>Red</source>
+				<target>Rot</target>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.options.Transparent" resname="element.productTravelCase.properties.options.Transparent" approved="yes">
+				<source>Transparent</source>
+				<target>Transparent</target>
+			</trans-unit>
+			<trans-unit id="element.productTravelCase.properties.options.Glow in the dark" resname="element.productTravelCase.properties.options.Glow in the dark" approved="yes">
+				<source>Glow in the dark</source>
+				<target>Im Dunkeln leuchtend</target>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.label" resname="element.productAccessories.properties.label" approved="yes">
+				<source>Accessories</source>
+				<target>Zubehör</target>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.elementDescription" resname="element.productAccessories.properties.elementDescription" approved="yes">
+				<source>Sold separately.</source>
+				<target>Separat erhältlich.</target>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.options.Batteries" resname="element.productAccessories.properties.options.Batteries" approved="yes">
+				<source>Batteries</source>
+				<target>Batterien</target>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.options.Memory card" resname="element.productAccessories.properties.options.Memory card" approved="yes">
+				<source>Memory card</source>
+				<target>Speicherkarte</target>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.options.Second controller" resname="element.productAccessories.properties.options.Second controller" approved="yes">
+				<source>Second controller</source>
+				<target>Zweiter Controller</target>
+			</trans-unit>
+			<trans-unit id="element.productAccessories.properties.options.Retro controller" resname="element.productAccessories.properties.options.Retro controller" approved="yes">
+				<source>Retro controller</source>
+				<target>Retro-Controller</target>
+			</trans-unit>
+			<trans-unit id="element.productThatOneThing.properties.label" resname="element.productThatOneThing.properties.label" approved="yes">
+				<source>That one thing you almost didn't put in the shopping cart but later turns out to be super practical.</source>
+				<target>Diese eine Sache, die du fast nicht in den Warenkorb gelegt hättest, die sich aber später als irre praktisch herausstellt.</target>
+			</trans-unit>
+			<trans-unit id="element.productServices.properties.label" resname="element.productServices.properties.label" approved="yes">
+				<source>Services</source>
+				<target>Serviceleistungen</target>
+			</trans-unit>
+			<trans-unit id="element.productServices.properties.options.Wrap as gift" resname="element.productServices.properties.options.Wrap as gift" approved="yes">
+				<source>Wrap as gift</source>
+				<target>Als Geschenk verpacken</target>
+			</trans-unit>
+			<trans-unit id="element.productServices.properties.options.Insured shipping" resname="element.productServices.properties.options.Insured shipping" approved="yes">
+				<source>Insured shipping</source>
+				<target>Versicherter Versand</target>
+			</trans-unit>
+			<trans-unit id="element.fieldsetBillingAddress.properties.label" resname="element.fieldsetBillingAddress.properties.label" approved="yes">
+				<source>Billing address</source>
+				<target>Rechnungsadresse</target>
+			</trans-unit>
+			<trans-unit id="element.firstName--billing.properties.label" resname="element.firstName--billing.properties.label" approved="yes">
+				<source>First name</source>
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="element.lastName--billing.properties.label" resname="element.lastName--billing.properties.label" approved="yes">
+				<source>Last name</source>
+				<target>Nachname</target>
+			</trans-unit>
+			<trans-unit id="element.address--billing.properties.label" resname="element.address--billing.properties.label" approved="yes">
+				<source>Address</source>
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="element.postalCode--billing.properties.label" resname="element.postalCode--billing.properties.label" approved="yes">
+				<source>Postal code</source>
+				<target>PLZ</target>
+			</trans-unit>
+			<trans-unit id="element.city--billing.properties.label" resname="element.city--billing.properties.label" approved="yes">
+				<source>City</source>
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="element.country--billing.properties.label" resname="element.country--billing.properties.label" approved="yes">
+				<source>Country</source>
+				<target>Land</target>
+			</trans-unit>
+			<trans-unit id="element.address-is-identical.properties.label" resname="element.address-is-identical.properties.label" approved="yes">
+				<source>Use billing address as shipping address.</source>
+				<target>Rechnungsadresse entspricht der Lieferadresse.</target>
+			</trans-unit>
+			<trans-unit id="element.fieldsetContactData.properties.label" resname="element.fieldsetContactData.properties.label" approved="yes">
+				<source>Contact data</source>
+				<target>Kontaktdaten</target>
+			</trans-unit>
+			<trans-unit id="element.email.properties.label" resname="element.email.properties.label" approved="yes">
+				<source>Email address</source>
+				<target>E-Mail-Adresse</target>
+			</trans-unit>
+			<trans-unit id="element.phone.properties.label" resname="element.phone.properties.label" approved="yes">
+				<source>Phone number</source>
+				<target>Telefonnummer</target>
+			</trans-unit>
+			<trans-unit id="element.fieldsetShippingAddress.properties.label" resname="element.fieldsetShippingAddress.properties.label" approved="yes">
+				<source>Shipping address</source>
+				<target>Versandadresse</target>
+			</trans-unit>
+			<trans-unit id="element.firstName--shipping.properties.label" resname="element.firstName--shipping.properties.label" approved="yes">
+				<source>First name</source>
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="element.lastName--shipping.properties.label" resname="element.lastName--shipping.properties.label" approved="yes">
+				<source>Last name</source>
+				<target>Nachname</target>
+			</trans-unit>
+			<trans-unit id="element.address--shipping.properties.label" resname="element.address--shipping.properties.label" approved="yes">
+				<source>Address</source>
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="element.postalCode--shipping.properties.label" resname="element.postalCode--shipping.properties.label" approved="yes">
+				<source>Postal code</source>
+				<target>PLZ</target>
+			</trans-unit>
+			<trans-unit id="element.city--shipping.properties.label" resname="element.city--shipping.properties.label" approved="yes">
+				<source>City</source>
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="element.country--shipping.properties.label" resname="element.country--shipping.properties.label" approved="yes">
+				<source>Country</source>
+				<target>Land</target>
+			</trans-unit>
+
+			<!-- Buttons -->
+			<trans-unit id="element.Form.renderingOptions.submitButtonLabel" resname="element.Form.renderingOptions.submitButtonLabel" approved="yes">
+				<source>Order now</source>
+				<target>Jetzt bestellen</target>
+			</trans-unit>
+			<trans-unit id="element.Page.renderingOptions.previousButtonLabel" resname="element.Page.renderingOptions.previousButtonLabel" approved="yes">
+				<source>back</source>
+				<target>zurück</target>
+			</trans-unit>
+			<trans-unit id="element.Page.renderingOptions.nextButtonLabel" resname="element.Page.renderingOptions.nextButtonLabel" approved="yes">
+				<source>continue</source>
+				<target>weiter</target>
+			</trans-unit>
+			<trans-unit id="element.SummaryPage.renderingOptions.previousButtonLabel" resname="element.SummaryPage.renderingOptions.previousButtonLabel" approved="yes">
+				<source>back</source>
+				<target>zurück</target>
+			</trans-unit>
+			<trans-unit id="element.SummaryPage.renderingOptions.nextButtonLabel" resname="element.SummaryPage.renderingOptions.nextButtonLabel" approved="yes">
+				<source>continue</source>
+				<target>weiter</target>
+			</trans-unit>
+
+			<!-- Custom -->
+			<trans-unit id="btn.edit.label" resname="btn.edit.label" approved="yes">
+				<source>edit</source>
+				<target>bearbeiten</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
